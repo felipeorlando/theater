@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const StyledGlobal = createGlobalStyle`
   @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
-  html, body, #___gatsby, #___gatsby > *[role="group"][tabindex] {
+  html, body {
     height: 100%;
     width: 100%;
   }
@@ -20,19 +20,6 @@ const StyledGlobal = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
-  }
-
-  #___gatsby {
-    background-color: ${({ theme }) => theme.light};
-    color: ${({ theme }) => theme.text};
-
-    > *[role="group"][tabindex] {
-      background-color: inherit;
-    }
-  }
-
-  #gatsby-focus-wrapper {
-    height: auto !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
