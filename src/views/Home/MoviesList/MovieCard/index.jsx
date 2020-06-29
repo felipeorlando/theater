@@ -14,7 +14,7 @@ const MovieCard = ({
   },
 }) => {
   const imageUrl = tmdbImage(posterPath, 500);
-  const releaseYear = releaseDate.split('-')[0];
+  const releaseYear = releaseDate ? releaseDate.split('-')[0] : null;
 
   return (
     <S.Card to={routes.movie(id)}>

@@ -8,23 +8,6 @@ export const Content = styled.div`
   padding: 90px 0;
 `;
 
-export const Header = styled.div`
-  display: flex;
-  font-size: 2rem;
-  font-weight: 600;
-  justify-content: center;
-  padding: 30px 0;
-  text-transform: lowercase;
-  width: 100%;
-`;
-
-export const Hero = styled.div`
-  background-color: ${({ theme }) => theme.accent};
-  color: ${({ theme }) => theme.light};
-  padding-bottom: 45px;
-  width: 100%;
-`;
-
 export const SearchInput = styled.input`
   border-radius: 30px;
   border: 0;

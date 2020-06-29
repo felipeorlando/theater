@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { getDiscoverMovies } from 'fetchers';
 import { initialValues } from 'stores/HomePage';
 import Context from './context';
 import Hero from './Hero';
@@ -11,26 +10,7 @@ const HomeView = () => {
 
   const providerValue = { store, setStore };
 
-  useEffect(() => {
-    const getMoviesData = async () => {
-      try {
-        const discoverMovies = await getDiscoverMovies();
-
-        setStore({
-          ...initialValues,
-          discoverMovies: discoverMovies.results,
-          status: 'loaded',
-        });
-      } catch(e) {
-        setStore({
-          ...initialValues,
-          status: 'error',
-        });
-      }
-    };
-
-    getMoviesData();
-  }, []);
+  console.log('!!! component updated');
 
   return (
     <Context.Provider value={providerValue}>
