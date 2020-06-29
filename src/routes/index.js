@@ -1,6 +1,6 @@
 const routes = {
   home: '/',
-  movie: '/movie/:slug',
+  movie: (id = null) => id ? `/movie/${id}` : '/movie/:id',
 };
 
 export default routes;

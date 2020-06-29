@@ -12,7 +12,7 @@ const App = () => (
     <Router>
       <NotFoundView default />
       <HomeView path={routes.home} />
-      <MovieView path={routes.movie} />
+      <MovieView path={routes.movie()} />
     </Router>
   </RootWrapper>
 );

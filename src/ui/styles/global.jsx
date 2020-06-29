@@ -4,6 +4,10 @@ import { createGlobalStyle } from 'styled-components';
 const StyledGlobal = createGlobalStyle`
   @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
+  * {
+    box-sizing: border-box;
+  }
+
   html, body {
     height: 100%;
     width: 100%;

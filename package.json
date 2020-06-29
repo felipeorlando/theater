@@ -5,6 +5,8 @@
   "dependencies": {
     "@reach/router": "^1.3.4",
     "lodash-es": "^4.17.15",
+    "polished": "^3.6.5",
+    "prop-types": "^15.7.2",
     "react": "^16.8.x",
     "react-dom": "^16.8.x",
     "react-helmet": "^6.1.0",
