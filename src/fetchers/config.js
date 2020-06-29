@@ -11,5 +11,6 @@ export const apiURL = (endpoint, queryParams = {}) => {
 
 export const endpoints = {
   discover: '/discover/movie',
+  getById: (movieId) => `/movie/${movieId}`,
   search: '/search/movie',
 };

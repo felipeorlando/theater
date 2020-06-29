@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { rules } from 'ui/breakpoints';
 
+export const Header = styled.header``;
+
 export const List = styled.div`
   display: grid;
   gap: 15px;

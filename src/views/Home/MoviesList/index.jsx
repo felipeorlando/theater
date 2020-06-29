@@ -63,7 +63,9 @@ const MoviesList = () => {
   return (
     <S.Wall>
       <Container>
-        <S.Title>{ search.term ? `Searching for: ${search.term}` : 'Dicover Movies' }</S.Title>
+        <S.Header>
+          <S.Title>{ search.term ? `Searching for: ${search.term}` : 'Dicover Movies' }</S.Title>
+        </S.Header>
 
         <S.List>
           {

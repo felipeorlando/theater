@@ -10,8 +10,6 @@ const HomeView = () => {
 
   const providerValue = { store, setStore };
 
-  console.log('!!! component updated');
-
   return (
     <Context.Provider value={providerValue}>
       <Hero />

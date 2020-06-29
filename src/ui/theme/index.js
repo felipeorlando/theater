@@ -1,7 +1,8 @@
 const theme = {
   accent: '#FA735A',
-  light: '#FFFFFF',
   dark: '#1F1914',
+  gray: '#393939',
+  light: '#FFFFFF',
 };
 
 export default theme;
