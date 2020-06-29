@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import { getMovieById } from 'fetchers';
 import { tmdbImage } from 'helpers/tmdbImage';
@@ -42,6 +43,10 @@ const MovieView = ({ movieId }) => {
 
   return (
     <Context.Provider value={providerValue}>
+      <Helmet>
+        <title>{movie.title} - Theater</title>
+      </Helmet>
+
       <Header
         title={movie.title}
         subtitle={movie.tagline}
