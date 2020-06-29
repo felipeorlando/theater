@@ -1,3 +1,4 @@
+import PropType from 'prop-types';
 import React from 'react';
 
 import { tmdbImage } from 'helpers/tmdbImage';
@@ -11,6 +12,7 @@ const MovieCard = ({
     posterPath,
     releaseDate,
     title,
+    voteAverage,
   },
 }) => {
   const imageUrl = tmdbImage(posterPath, 500);
@@ -22,14 +24,15 @@ const MovieCard = ({
 
       <S.Content>
         <S.Title>{title}</S.Title>
-        <S.Year>{releaseYear}</S.Year>
+
+        <S.Year>{releaseYear} - {voteAverage}</S.Year>
       </S.Content>
     </S.Card>
   );
 };
 
 MovieCard.propTypes = {
-  movie: Movie,
+  movie: PropType.shape(Movie),
 };
 
 export default React.memo(MovieCard);

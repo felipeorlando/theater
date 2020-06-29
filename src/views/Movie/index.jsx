@@ -39,7 +39,6 @@ const MovieView = ({ movieId }) => {
   }
 
   const { movie } = store;
-  console.log('!!! store.movie', movie);
 
   return (
     <Context.Provider value={providerValue}>

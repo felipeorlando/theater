@@ -17,6 +17,7 @@ export const Content = styled.div`
 `;
 
 export const Card = styled(Link)`
+  background-color: ${({ theme }) => theme.accent};
   display: flex;
   position: relative;
   width: 100%;

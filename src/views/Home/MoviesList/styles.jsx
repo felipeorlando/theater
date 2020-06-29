@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 import { rules } from 'ui/breakpoints';
 
-export const Header = styled.header``;
+export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const List = styled.div`
   display: grid;

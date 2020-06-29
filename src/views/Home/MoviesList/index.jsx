@@ -7,9 +7,10 @@ import Container from 'ui/components/Container';
 import MovieCard from './MovieCard';
 import * as S from './styles';
 import Context from '../context';
+import Stars from './Stars';
 
 const MoviesList = () => {
-  const { setStore, store: { discoverMovies, search, status } } = useContext(Context);
+  const { setStore, store: { discoverMovies, rating, search, status } } = useContext(Context);
 
   useEffect(() => {
     const getMoviesData = async () => {
@@ -60,22 +61,35 @@ const MoviesList = () => {
     }
   }, [setStore, search.term]);
 
+  const movies = status === 'loaded'
+    ? (search.term ? search.result : discoverMovies)
+      .filter((movie) => {
+        if (!rating) return true;
+
+        const maxRating = rating * 2;
+        const minRating = maxRating - 1;
+
+        return movie.voteAverage >= minRating && movie.voteAverage <= maxRating;
+      })
+    : null;
+
   return (
     <S.Wall>
       <Container>
         <S.Header>
           <S.Title>{ search.term ? `Searching for: ${search.term}` : 'Dicover Movies' }</S.Title>
+
+          <Stars />
         </S.Header>
 
         <S.List>
           {
-            status === 'loaded'
+            movies
               ? (
-                  search.term
-                    ? search.result
-                    : discoverMovies
-                ).map((movie) => <MovieCard movie={movie} key={movie.id} />)
-              : null
+                movies.length > 0
+                  ? movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)
+                  : <span>No movies finded :(</span>
+              ) : <span>Loading...</span>
           }
         </S.List>
       </Container>
