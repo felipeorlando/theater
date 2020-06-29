@@ -62,14 +62,13 @@ const MoviesList = () => {
   }, [setStore, search.term]);
 
   const movies = status === 'loaded'
-    ? (search.term ? search.result : discoverMovies)
-      .filter((movie) => {
+    ? (search.term ? search.result : discoverMovies).filter((movie) => {
         if (!rating) return true;
 
-        const maxRating = rating * 2;
-        const minRating = maxRating - 1;
+        const maxRating = (rating * 2) + 1;
+        const minRating = maxRating - 2;
 
-        return movie.voteAverage >= minRating && movie.voteAverage <= maxRating;
+        return movie.voteAverage >= minRating && movie.voteAverage < maxRating;
       })
     : null;
 
